@@ -4,7 +4,6 @@ npm-debug.log
 .env
 .DS_Store
 **/.DS_Store
-src/wwebjs_auth
-src/wwebjs_cache
 .wwebjs_auth/
 .wwebjs_cache/
+.prettierrc.json
