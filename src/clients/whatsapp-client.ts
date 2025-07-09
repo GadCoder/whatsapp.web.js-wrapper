@@ -19,27 +19,33 @@ class WhatsAppClient {
       },
     };
 
-    if (process.env.PUPPETEER_EXECUTABLE_PATH) {
-      clientOptions.puppeteer!.executablePath =
-        process.env.PUPPETEER_EXECUTABLE_PATH;
-    }
     this.client = new Client(clientOptions);
   }
 
   public async initialize(): Promise<void> {
     console.log("Initializing WhatsApp client...");
 
-    if (!process.env.PUPPETEER_EXECUTABLE_PATH) {
-      this.client.on("qr", (qr: string) => {
-        qrcode.generate(qr, { small: true });
-      });
-    }
-
-    this.client.on("ready", () => {
-      console.log("Client is ready!");
+    this.client.on("qr", (qr: string) => {
+      qrcode.generate(qr, { small: true });
     });
 
     await this.client.initialize();
+
+    // Wait for "authenticated"
+    await new Promise<void>((resolve) => {
+      this.client.once("authenticated", () => {
+        console.log("Client authenticated");
+        resolve();
+      });
+    });
+
+    // Wait for "ready"
+    await new Promise<void>((resolve) => {
+      this.client.once("ready", () => {
+        console.log("Client is ready!");
+        resolve();
+      });
+    });
   }
 
   public static getInstance(): WhatsAppClient {
