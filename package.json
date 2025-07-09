@@ -1,36 +1,35 @@
 {
-    "name": "expenses-chatbot",
-    "version": "1.0.0",
-    "main": "dist/main.js",
-    "scripts": {
-        "build": "tsc",
-        "init:client": "ts-node src/scripts/init-client.ts",
-        "start:gateway": "node dist/services/WhatsAppGatewayService.js",
-        "start:processor": "node dist/services/ApiProcessorService.js",
-        "start:analytics": "node dist/services/AnalyticsService.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/GadCoder/Expenses-ChatBot.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/GadCoder/Expenses-ChatBot/issues"
-    },
-    "homepage": "https://github.com/GadCoder/Expenses-ChatBot#readme",
-    "description": "",
-    "dependencies": {
-        "qrcode-terminal": "^0.12.0",
-        "redis": "^5.5.6",
-        "whatsapp-web.js": "^1.31.0"
-    },
-    "devDependencies": {
-        "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-        "@types/node": "^20.14.11",
-        "@types/qrcode-terminal": "^0.12.2",
-        "puppeteer": "^18.2.1",
-        "ts-node": "^10.9.2",
-        "typescript": "^5.5.3"
-    }
+  "name": "expenses-chatbot",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start:gateway": "node dist/services/WhatsAppGatewayService.js",
+    "start:processor": "node dist/services/ApiProcessorService.js",
+    "start:analytics": "node dist/services/AnalyticsService.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GadCoder/Expenses-ChatBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GadCoder/Expenses-ChatBot/issues"
+  },
+  "homepage": "https://github.com/GadCoder/Expenses-ChatBot#readme",
+  "description": "",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "redis": "^5.5.6",
+    "whatsapp-web.js": "^1.31.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^20.14.11",
+    "@types/qrcode-terminal": "^0.12.2",
+    "puppeteer": "^18.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  }
 }
