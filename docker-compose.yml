@@ -27,6 +27,8 @@ services:
     depends_on:
       - redis
     environment:
+      - EXTERNAL_API_URL=http://host.docker.internal:8000
+      - EXTERNAL_API_KEY=tWREOmAgQDdzKX7UNYvdfc7gxJJZkCip
       - REDIS_HOST=redis
     command: npm run start:processor
 
