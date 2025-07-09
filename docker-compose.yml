@@ -8,6 +8,8 @@ services:
       - "6379:6379"
     volumes:
       - redis-data:/data
+    networks:
+      - expenses_app_network
 
   whatsapp-gateway:
     build: .
@@ -19,6 +21,8 @@ services:
       - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
     volumes:
       - ./.wwebjs_auth:/usr/src/app/.wwebjs_auth
+    networks:
+      - expenses_app_network
     command: npm run start:gateway
 
   api-processor:
@@ -27,10 +31,16 @@ services:
     depends_on:
       - redis
     environment:
-      - EXTERNAL_API_URL=http://host.docker.internal:8000
-      - EXTERNAL_API_KEY=tWREOmAgQDdzKX7UNYvdfc7gxJJZkCip
+      - EXTERNAL_API_URL=http://fastapi-api:8000
+      - EXTERNAL_API_KEY=${EXTERNAL_API_KEY}
       - REDIS_HOST=redis
+    networks:
+      - expenses_app_network
     command: npm run start:processor
 
 volumes:
   redis-data:
+
+networks:
+  expenses_app_network:
+    external: true
