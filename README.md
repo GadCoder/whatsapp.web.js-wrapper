@@ -45,13 +45,28 @@ This is the recommended way to run the application.
     ```bash
     git clone https://github.com/GadCoder/whatsapp.web.js-wrapper.git
     ```
-2.  Install the dependencies:
+2.  Navigate to the project directory:
+    ```bash
+    cd whatsapp.web.js-wrapper
+    ```
+3.  Install the dependencies:
     ```bash
     npm install
     ```
-3.  Start the services (see `package.json` scripts for more options):
+4.  Build the TypeScript code:
+    ```bash
+    npm run build
+    ```
+5.  Start the services. You will need two separate terminals for this.
+
+    In the first terminal, start the WhatsApp Gateway Service:
     ```bash
     npm run start:gateway
+    ```
+
+    In the second terminal, start the API Processor Service:
+    ```bash
+    npm run start:processor
     ```
 
 ## Environment Variables

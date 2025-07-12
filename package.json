@@ -5,8 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start:gateway": "node dist/services/WhatsAppGatewayService.js",
-    "start:processor": "node dist/services/ApiProcessorService.js",
-    "start:analytics": "node dist/services/AnalyticsService.js"
+    "start:processor": "node dist/services/ApiProcessorService.js"
   },
   "repository": {
     "type": "git",
