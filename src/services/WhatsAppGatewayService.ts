@@ -48,7 +48,6 @@ async function startGateway() {
     await publisher.publish("events:message:received", eventPayload);
     console.log("[Gateway] Published message:received event.");
   });
-  console.log("Holaa");
 
   console.log("[Gateway] Service is running and listening for messages.");
 }
