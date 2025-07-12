@@ -31,7 +31,6 @@ class WhatsAppClient {
 
     await this.client.initialize();
 
-    // Wait for "authenticated"
     await new Promise<void>((resolve) => {
       this.client.once("authenticated", () => {
         console.log("Client authenticated");
@@ -39,7 +38,6 @@ class WhatsAppClient {
       });
     });
 
-    // Wait for "ready"
     await new Promise<void>((resolve) => {
       this.client.once("ready", () => {
         console.log("Client is ready!");

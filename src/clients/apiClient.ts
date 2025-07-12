@@ -20,7 +20,7 @@ class ApiClient {
   }
 
   public async processMessage(chatId: string, text: string): Promise<string> {
-    const endpoint = "/webhook/process-message";
+    const endpoint = process.env.EXTERNAL_API_ENDPOINT;
     const url = `${this.baseUrl}${endpoint}`;
 
     try {
