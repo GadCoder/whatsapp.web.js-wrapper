@@ -20,11 +20,11 @@ This is the recommended way to run the application.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/GadCoder/Expenses-ChatBot.git
+    git clone https://github.com/GadCoder/whatsapp.web.js-wrapper.git
     ```
 2.  Navigate to the project directory:
     ```bash
-    cd Expenses-ChatBot
+    cd whatsapp.web.js-wrapper
     ```
 3.  Start the application using Docker Compose:
     ```bash
@@ -43,7 +43,7 @@ This is the recommended way to run the application.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/GadCoder/Expenses-ChatBot.git
+    git clone https://github.com/GadCoder/whatsapp.web.js-wrapper.git
     ```
 2.  Install the dependencies:
     ```bash
